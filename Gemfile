@@ -19,6 +19,10 @@ gem "jbuilder"
 
 gem "rack-cors"
 
+gem "webpacker-react"
+
+gem "foreman"
+
 gem "rake"
 
 gem "httparty"
