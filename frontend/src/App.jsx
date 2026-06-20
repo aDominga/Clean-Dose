@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 const API_URL = "http://localhost:3000/api/medications";
 
@@ -18,13 +19,17 @@ export default function App() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h1>FDA Drug Recalls</h1>
-      <table>
+    <div className="app">
+      <header className="app-header">
+        <h1>FDA Drug Recalls</h1>
+      </header>
+  
+      <div className="table-wrapper">
+      <table className="recalls-table">
         <thead>
           <tr>
             <th>Recall #</th>
-            <th>reason for recall</th>
+            <th>Reason for recall</th>
             <th>Status</th>
             <th>Firm</th>
           </tr>
@@ -34,12 +39,16 @@ export default function App() {
             <tr key={med.id}>
               <td>{med.recall_identifier}</td>
               <td>{med.recall_reason}</td>
-              <td>{med.status}</td>
+              <td>
+                <span className="status-badge">{med.status}</span>
+              </td>
               <td>{med.recalling_firm}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
+
     </div>
   );
 }
