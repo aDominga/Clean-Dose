@@ -3,7 +3,6 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 
 const API_URL = "http://localhost:3000/api/medications";
 
-// Template: label + field name for every DB column you care about
 const FIELDS = [
   { label: "Recall #", key: "recall_identifier" },
   { label: "Description", key: "description" },
@@ -23,7 +22,7 @@ const FIELDS = [
 ];
 
 export default function MedicationDetail() {
-  const { id } = useParams();        // reads :id from URL
+  const { id } = useParams();        
   const navigate = useNavigate();
   const [medication, setMedication] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -52,9 +51,7 @@ export default function MedicationDetail() {
   return (
     <div className="app detail-page">
       <header className="app-header">
-        <button className="back-button" onClick={() => navigate(-1)}>
-          ← Back
-        </button>
+
         <h1>Recall Details</h1>
         <p className="detail-subtitle">{medication.recall_identifier}</p>
       </header>
