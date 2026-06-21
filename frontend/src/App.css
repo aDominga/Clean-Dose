@@ -18,10 +18,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-width: 1100px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   box-sizing: border-box;
   overflow: hidden;
   background: #E6E6FA;
@@ -34,43 +34,38 @@ body {
   margin-bottom: 1.5rem;
 }
 
-
-
-/* Chrome, Safari, Edge */
-.table-wrapper::-webkit-scrollbar {
-  width: 10px;                              
-  color: #14124b;
-  background: #E6E6FA;
+.table-shell {
+  flex: 1;
+  min-height: 0;
+  background: #fff;
   border-radius: 10px;
+  border: 1px solid #a7a7d5;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.table-wrapper::-webkit-scrollbar-track {
-  background: #a7a7d5;                      
-  border-radius: 10px;
+.table-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: scroll;
+  padding: 0 14px 0 0;     
+  scrollbar-width: auto;
+  scrollbar-color: #14124b;
 }
-.table-wrapper::-webkit-scrollbar-thumb {
-  background: #14124b;                      
-  border-radius: 10px;
-  border: 1px solid #E6E6FA;                  
+.table-scroll::-webkit-scrollbar {
+  width: 12px;
 }
-.table-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #2a2770;                      
+.table-scroll::-webkit-scrollbar-track {
+  background: #f0f0f8;
 }
-
-
-
-.table-wrapper {
-  flex: 1;           
-  min-height: 0;     
-  overflow-y: auto;
-  padding:30px;  
-  background: #E6E6FA;
-  border-radius: 10px;
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #14124b;
+  border-radius: 1px;
 }
 .recalls-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
-  background: var(--bg);
- 
 }
 .recalls-table thead th {
   position: sticky;
@@ -79,7 +74,15 @@ body {
   background:#515178;
   color: #E6E6FA;
   height: 50px;
+  width: 2rem;
 }
+
+.recalls-table thead th:nth-child(1) { width: 10%; }
+.recalls-table thead th:nth-child(2) { width: 30%; }
+.recalls-table thead th:nth-child(3) { width: 30%; }
+.recalls-table thead th:nth-child(4) { width: 10%; }
+.recalls-table thead th:nth-child(5) { width: 20%; }
+
 .status-badge {
   display: inline-block;
   padding: 4px 10px;
@@ -88,4 +91,69 @@ body {
   background: var(--accent-bg);
   color: var(--accent);
   border: 1px solid var(--accent-border);
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background: var(--accent-bg);
+}
+
+.row-link {
+  color: #14124b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.row-link:hover {
+  text-decoration: underline;
+}
+
+.back-button {
+  background: #14124b;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #E6E6FA;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #14124b;
+}
+
+.detail-value {
+  color: #333;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #14124b;
+}
+
+.recalls-table td:nth-child(2) {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

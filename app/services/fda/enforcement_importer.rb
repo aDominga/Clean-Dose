@@ -31,7 +31,7 @@ module Fda
               recall_identifier: api_record["recall_number"].presence || "No recall number provided",
               report_date: api_record["report_date"],
               classification: api_record["classification"],
-              description: api_record["description"].presence || "No description provided",
+              description: api_record["product_description"].presence || "No description provided",
               recall_reason: api_record["reason_for_recall"],
               recall_initiation_date: api_record["recall_initiation_date"],
               status: api_record["status"],
