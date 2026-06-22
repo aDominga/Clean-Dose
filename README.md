@@ -49,5 +49,3 @@ bin/dev
 - **Data import:** Run `bin/rails medications:import` to pull recall records from the openFDA API. Re-running the task may skip duplicate records.
 - **Local URLs:** Frontend at http://localhost:4000 · API at http://localhost:3000
 
-
->>>>>>> 2934eb0 (ReadMe update: Created  ReadMe)
