@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 # Clean Dose
 
 A personal full-stack project for browsing FDA drug recall data in a simple, searchable interface.
@@ -48,4 +45,3 @@ bin/dev
 - **Database:** This project uses PostgreSQL hosted on [Supabase](https://supabase.com/). Set `DATABASE_URL` in a local `.env` file (see [Getting Started](#getting-started)).
 - **Data import:** Run `bin/rails medications:import` to pull recall records from the openFDA API. Re-running the task may skip duplicate records.
 - **Local URLs:** Frontend at http://localhost:4000 · API at http://localhost:3000
-
